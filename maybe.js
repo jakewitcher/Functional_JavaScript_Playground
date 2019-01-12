@@ -2,11 +2,6 @@ const R = require("ramda");
 const Maybe = require("folktale/maybe");
 const Result = require("folktale/result");
 
-const model = {
-  user: "",
-  decisions: []
-};
-
 const username = "jake";
 
 const isNothing = value => value == undefined || value == null;
@@ -51,3 +46,12 @@ const formatUsername = R.compose(
 
 result = formatUsername(username);
 console.log(result);
+
+const userInput = "27";
+
+const saveUserAge = R.compose(
+  R.map(parseFloat),
+  maybe
+);
+
+console.log(saveUserAge(userInput));
